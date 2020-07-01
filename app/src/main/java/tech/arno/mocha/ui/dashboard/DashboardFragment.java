@@ -12,8 +12,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import tech.arno.libnavannotation.FragmentDestination;
 import tech.arno.mocha.R;
 
+@FragmentDestination(pageUrl = "main/tabs/dash", asStarter = false)
 public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
