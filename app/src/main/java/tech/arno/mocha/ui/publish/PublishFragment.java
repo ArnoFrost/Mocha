@@ -15,7 +15,7 @@ import androidx.lifecycle.ViewModelProviders;
 import tech.arno.libnavannotation.FragmentDestination;
 import tech.arno.mocha.R;
 
-@FragmentDestination(pageUrl = "main/tabs/publish", asStarter = false)
+//@FragmentDestination(pageUrl = "main/tabs/publish", asStarter = false)
 public class PublishFragment extends Fragment {
 
     private PublishViewModel viewModel;

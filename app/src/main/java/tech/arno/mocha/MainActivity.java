@@ -6,6 +6,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
@@ -28,7 +29,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         NavigationUI.setupWithNavController(navView, navController);
 
 
-        NavGrapBuilder.build(navController);
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+
+        NavGrapBuilder.build(navController, this, fragment.getId());
         navView.setOnNavigationItemSelectedListener(this);
 
     }

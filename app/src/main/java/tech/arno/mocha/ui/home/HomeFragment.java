@@ -1,6 +1,7 @@
 package tech.arno.mocha.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ import tech.arno.mocha.R;
 
 @FragmentDestination(pageUrl = "main/tabs/home", asStarter = true)
 public class HomeFragment extends Fragment {
-
+    private static final String TAG = "HomeFragment";
     private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -38,5 +39,6 @@ public class HomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        Log.d(TAG, "onResume: ");
     }
 }

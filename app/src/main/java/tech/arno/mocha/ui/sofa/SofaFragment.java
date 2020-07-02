@@ -1,6 +1,7 @@
 package tech.arno.mocha.ui.sofa;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,7 @@ import tech.arno.mocha.R;
 
 @FragmentDestination(pageUrl = "main/tabs/sofa", asStarter = false)
 public class SofaFragment extends Fragment {
-
+    private static final String TAG = "SofaFragment";
     private SofaViewModel viewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -33,5 +34,11 @@ public class SofaFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume: ");
     }
 }
