@@ -1,4 +1,4 @@
-package tech.arno.mocha.ui.dashboard;
+package tech.arno.mocha.ui.sofa;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,18 +15,18 @@ import androidx.lifecycle.ViewModelProviders;
 import tech.arno.libnavannotation.FragmentDestination;
 import tech.arno.mocha.R;
 
-@FragmentDestination(pageUrl = "main/tabs/dash", asStarter = false)
-public class DashboardFragment extends Fragment {
+@FragmentDestination(pageUrl = "main/tabs/sofa", asStarter = false)
+public class SofaFragment extends Fragment {
 
-    private DashboardViewModel dashboardViewModel;
+    private SofaViewModel viewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        viewModel =
+                ViewModelProviders.of(this).get(SofaViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_sofa, container, false);
+        final TextView textView = root.findViewById(R.id.text_sofa);
+        viewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

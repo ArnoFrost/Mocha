@@ -1,4 +1,4 @@
-package tech.arno.mocha.ui.notifications;
+package tech.arno.mocha.ui.publish;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,18 +15,18 @@ import androidx.lifecycle.ViewModelProviders;
 import tech.arno.libnavannotation.FragmentDestination;
 import tech.arno.mocha.R;
 
-@FragmentDestination(pageUrl = "main/tabs/notification", asStarter = false)
-public class NotificationsFragment extends Fragment {
+@FragmentDestination(pageUrl = "main/tabs/publish", asStarter = false)
+public class PublishFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private PublishViewModel viewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        viewModel =
+                ViewModelProviders.of(this).get(PublishViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_publish, container, false);
+        final TextView textView = root.findViewById(R.id.text_publish);
+        viewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
