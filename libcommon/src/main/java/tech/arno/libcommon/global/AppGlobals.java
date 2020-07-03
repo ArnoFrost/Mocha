@@ -1,10 +1,9 @@
-package tech.arno.mocha.utils;
+package tech.arno.libcommon.global;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
 
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 /**
  * <pre>

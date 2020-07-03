@@ -41,9 +41,14 @@ dependencies {
     //自定义navigation注解器
     implementation project(path: ':libnavannotation')
     annotationProcessor project(path: ':libnavcompiler')
+    //依赖公共库
+    implementation project(path: ':libcommon')
+
+    //添加网络依赖库
+    implementation project(path: ':libnetwork')
 
     //三方引用
-    implementation 'com.alibaba:fastjson:1.2.59'
+//    implementation 'com.alibaba:fastjson:1.2.59'
 
 
     //单元测试

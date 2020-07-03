@@ -12,6 +12,7 @@ import androidx.navigation.fragment.FragmentNavigator;
 
 import java.util.HashMap;
 
+import tech.arno.libcommon.global.AppGlobals;
 import tech.arno.mocha.model.Destination;
 import tech.arno.mocha.navigator.FixFragmentNavigator;
 
