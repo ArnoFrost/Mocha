@@ -8,7 +8,12 @@ import java.io.ObjectOutputStream;
 
 public class CacheManager {
 
-    //反序列,把二进制数据转换成java object对象
+    /**
+     * 反序列,把二进制数据转换成java object对象
+     *
+     * @param data
+     * @return
+     */
     private static Object toObject(byte[] data) {
         ByteArrayInputStream bais = null;
         ObjectInputStream ois = null;
@@ -33,7 +38,13 @@ public class CacheManager {
         return null;
     }
 
-    //序列化存储数据需要转换成二进制
+    /**
+     * 序列化存储数据需要转换成二进制
+     *
+     * @param body
+     * @param <T>
+     * @return
+     */
     private static <T> byte[] toByteArray(T body) {
         ByteArrayOutputStream baos = null;
         ObjectOutputStream oos = null;
@@ -67,6 +78,13 @@ public class CacheManager {
         CacheDatabase.get().getCache().delete(cache);
     }
 
+    /**
+     * 存入数据库
+     *
+     * @param key
+     * @param body
+     * @param <T>
+     */
     public static <T> void save(String key, T body) {
         Cache cache = new Cache();
         cache.key = key;
@@ -75,6 +93,12 @@ public class CacheManager {
         CacheDatabase.get().getCache().save(cache);
     }
 
+    /**
+     * 读取数据库
+     *
+     * @param key
+     * @return
+     */
     public static Object getCache(String key) {
         Cache cache = CacheDatabase.get().getCache().getCache(key);
         if (cache != null && cache.data != null) {

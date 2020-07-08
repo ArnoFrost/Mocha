@@ -85,6 +85,12 @@ public abstract class Request<T, R extends Request> implements Cloneable {
         return (R) this;
     }
 
+    /**
+     * 传入缓存类型
+     *
+     * @param cacheStrategy
+     * @return
+     */
     public R cacheStrategy(@CacheStrategy int cacheStrategy) {
         mCacheStrategy = cacheStrategy;
         return (R) this;
@@ -251,6 +257,7 @@ public abstract class Request<T, R extends Request> implements Cloneable {
     }
 
     private void saveCache(T body) {
+        //如果没有自动生成一个cacheKey
         String key = TextUtils.isEmpty(cacheKey) ? generateCacheKey() : cacheKey;
         CacheManager.save(key, body);
     }

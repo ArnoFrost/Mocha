@@ -20,10 +20,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility "1.8"
         targetCompatibility "1.8"
 
+    }
+
+    buildFeatures {
+        dataBinding = true
     }
 }
 
@@ -42,14 +47,12 @@ dependencies {
     implementation project(path: ':libnavannotation')
     annotationProcessor project(path: ':libnavcompiler')
     //依赖公共库
-    implementation project(path: ':libcommon')
+    api project(path: ':libcommon')
 
     //添加网络依赖库
     implementation project(path: ':libnetwork')
 
     //三方引用
-//    implementation 'com.alibaba:fastjson:1.2.59'
-
 
     //单元测试
     testImplementation 'junit:junit:4.12'
