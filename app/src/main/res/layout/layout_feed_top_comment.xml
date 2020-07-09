@@ -73,12 +73,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{comment.ugc.likeCount>0?
-                    StringConvert.convertFeedUgc(comment.ugc.likeCount)
-                    :null}"
-                    android:textColor="@{comment.ugc.hasLiked?
-                    @color/color_theme:
-                    @color/color_3d3}"
+                    android:text="@{comment.ugc.likeCount>0?StringConvert.convertFeedUgc(comment.ugc.likeCount):null}"
+                    android:textColor="@{comment.ugc.hasLiked?@color/color_theme:@color/color_3d3}"
                     android:textSize="@dimen/sp_12"
                     tools:text="1000" />
 
@@ -87,9 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dp_4"
                     android:padding="2dp"
-                    android:src="@{comment.ugc.hasLiked?
-                    @drawable/icon_cell_liked:
-                    @drawable/icon_cell_like}"
+                    android:src="@{comment.ugc.hasLiked?@drawable/icon_cell_liked:@drawable/icon_cell_like}"
                     tools:src="@drawable/icon_cell_liked" />
             </LinearLayout>
 
@@ -103,9 +97,7 @@
                 android:text="@{comment.commentText}"
                 android:textColor="@color/color_3d3"
                 android:textSize="@dimen/sp_14"
-                android:visibility="@{TextUtils.isEmpty(comment.commentText)?
-                View.GONE:
-                View.VISIBLE}"
+                android:visibility="@{TextUtils.isEmpty(comment.commentText)?View.GONE:View.VISIBLE}"
                 tools:text="Jetpack is good ~~~~~~~~
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" />
 
@@ -127,9 +119,7 @@
                     android:layout_height="@dimen/dp_20"
                     android:layout_gravity="center"
                     android:src="@drawable/icon_video_play"
-                    android:visibility="@{comment.commentType==2?
-                    View.VISIBLE:
-                    View.GONE}" />
+                    android:visibility="@{comment.commentType==2?View.VISIBLE:View.GONE}" />
             </FrameLayout>
         </LinearLayout>
 
